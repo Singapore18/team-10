@@ -13,6 +13,7 @@ app.config['SECRET_KEY'] = '123456'
 import minds_backend.routes.Form
 import minds_backend.routes.Offer
 import minds_backend.routes.Job
+import minds_backend.routes.Coach
 
 #import minds_backend.routes.Article
 #from minds_backend.routes.User import is_logged_in
