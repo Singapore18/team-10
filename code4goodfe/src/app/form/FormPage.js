@@ -211,7 +211,7 @@ export default class FormPage extends Component {
                                                     </button>
                                                     <span style={{'color':'transparent'}}>|</span>
                                                     {index===this.state.questions.length-1?(
-                                                        <button class='button-call-to-actions' onClick={this.submit()}>
+                                                        <button class='button-call-to-actions' onClick={()=>this.submit()}>
                                                             <h4>Submit</h4>
                                                         </button>
                                                     ):(
@@ -235,7 +235,7 @@ export default class FormPage extends Component {
                                                     </button>
                                                     <span style={{'color':'transparent'}}>|</span>
                                                     {index===this.state.questions.length-1?(
-                                                        <button class='button-call-to-actions' onClick={this.submit()}>
+                                                        <button class='button-call-to-actions' onClick={()=>this.submit()}>
                                                             <h4>Submit</h4>
                                                         </button>
                                                     ):(
