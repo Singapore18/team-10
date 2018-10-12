@@ -69,6 +69,7 @@ export default class CoachPage extends Component {
         .catch((error) => {
             
         })
+        window.location.href='/home';
     }
     render() {
         return(

@@ -63,6 +63,8 @@ class ResumePage extends Component {
                                      {this.renderJobInterest(userInfo.interested_industries)}
                                      <Header as='h3'>How You Can Support Me</Header>
                                      <text>{`${userInfo.support}`}</text>
+                                     <br /> 
+                                     <br />
                                      <Message>
                                          <text>'This guy has been an awesome worker for us. Keep up the good work!' - Uniqlo</text>
                                      </Message>
