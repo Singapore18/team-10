@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-
-import FormScreen from './app/form/FormPage';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+
+// Import Screens
+import FormPage from './app/form/FormPage';
+import CoachPage from './app/coach/CoachPage';
+import ResumePage from './app/resume/ResumePage';
 
 // Import css
 import './app/assets/css/theme.css';
@@ -18,7 +21,9 @@ class App extends Component {
       <Router>
         <Route>
           <Switch>
-              <Route exact path='/' component={FormScreen}/>
+              <Route exact path='/' component={FormPage}/>
+              <Route exact path='/resume/:identifier' component={ResumePage}/>
+              <Route exact path='/coach/:identifier' component={CoachPage}/>
           </Switch>
         </Route>
       </Router>

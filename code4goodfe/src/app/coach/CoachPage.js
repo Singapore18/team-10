@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class FormPage extends Component {
+export default class CoachPage extends Component {
     constructor(props) {
         super(props);
     }
