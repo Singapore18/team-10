@@ -14,14 +14,14 @@ def store_new_offer():
 
     mongo.offers.insert_one({
         'employee_id': data['employee_id'],
-        'date': data['date'],
+        #'date': data['date'],
         'company_name': data['company_name'],
         'work_location': data['work_location'],
         'job_title': data['job_title'],
         'job_description': data['job_description'],
         'contact_person': data['contact_person'],
         'contact_number': data['contact_number'],
-        'email_address': data['email_address'],
+        #'email_address': data['email_address'],
         'remarks': data['remarks'],
 
         'status': 'offered', #offered, accepted,
@@ -31,8 +31,8 @@ def store_new_offer():
 
     employee = mongo.forms.find_one({'_id': ObjectId(data['employee_id'])})
 
-    coach = mongo.coaches.find_one({"_id": ObjectId("5bc03bf9894fef79e4e86822")})
-    coach_email = coach['email_address']
+    # coach = mongo.coaches.find_one({"_id": ObjectId("5bc03bf9894fef79e4e86822")})
+    coach_email = "xujinzheng0610@gmail.com"
     employee_name = employee['full_name']
     msg = "Hi, \n Employee," + employee_name + ' has received a job offer from ' +  data['company_name'] + ' for the position of ' + data['job_title']
 
@@ -45,16 +45,18 @@ def store_new_offer():
         print(jsonify('success'))
     except:
         print(jsonify('failed'))
+        
+    return "Saved"
 
-    gmailaddress = "noreply.mindsjobs@gmail.com"
+"""    gmailaddress = "noreply.mindsjobs@gmail.com"
     gmailpassword = "cfgminds"
     mailServer = smtplib.SMTP('smtp.gmail.com' , 587)
     mailServer.starttls()
     mailServer.login(gmailaddress , gmailpassword)
     mailServer.sendmail(gmailaddress, coach_email , msg)
-    mailServer.quit()
+    mailServer.quit()"""
 
-    return "Saved"
+    
 
 
 @app.route('/get_offer', methods=['POST'])

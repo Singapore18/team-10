@@ -79,21 +79,21 @@ export default class CoachPage extends Component {
                         <b>Date: {(new Date).toDateString()} </b>
                         <br />
                         <b>Company Name: </b>
-                        <Input fluid placeholder='' onChange={(event)=>{this.setState({company_name:event.target.value},()=>{this.submit();})}}/><br/>
+                        <Input fluid placeholder='' onChange={(event)=>{this.setState({company_name:event.target.value})}}/><br/>
                         <b>Work Location: </b>
-                        <Input fluid placeholder='' onChange={(event)=>{this.setState({work_location:event.target.value},()=>{this.submit();})}}/><br/>
+                        <Input fluid placeholder='' onChange={(event)=>{this.setState({work_location:event.target.value})}}/><br/>
                         <b>Job Title: </b>
-                        <Input fluid placeholder='' onChange={(event)=>{this.setState({job_title:event.target.value},()=>{this.submit();})}}/><br/>
+                        <Input fluid placeholder='' onChange={(event)=>{this.setState({job_title:event.target.value})}}/><br/>
                         <b>Job Description and Requirements: </b>
-                        <Input fluid placeholder='' onChange={(event)=>{this.setState({job_description:event.target.value},()=>{this.submit();})}}/><br/>
+                        <Input fluid placeholder='' onChange={(event)=>{this.setState({job_description:event.target.value})}}/><br/>
                         <b>Contact Person: </b>
-                        <Input fluid placeholder='' onChange={(event)=>{this.setState({contact_person:event.target.value},()=>{this.submit();})}}/><br/>
+                        <Input fluid placeholder='' onChange={(event)=>{this.setState({contact_person:event.target.value})}}/><br/>
                         <b>Contact Number: </b>
-                        <Input fluid placeholder='' onChange={(event)=>{this.setState({contact_number:event.target.value},()=>{this.submit();})}}/><br/>
+                        <Input fluid placeholder='' onChange={(event)=>{this.setState({contact_number:event.target.value})}}/><br/>
                         <b>Email Address: </b>
-                        <Input fluid placeholder='' onChange={(event)=>{this.setState({email_address:event.target.value},()=>{this.submit();})}}/><br/>
+                        <Input fluid placeholder='' onChange={(event)=>{this.setState({email_address:event.target.value})}}/><br/>
                         <b>Remarks: </b>
-                        <Input fluid placeholder='' onChange={(event)=>{this.setState({remarks:event.target.value},()=>{this.submit();})}}/><br/>
+                        <Input fluid placeholder='' onChange={(event)=>{this.setState({remarks:event.target.value})}}/><br/>
                     </div>
 
                     <button class='ui inverted button' onClick={()=>{this.offer()}}>

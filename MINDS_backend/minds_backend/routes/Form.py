@@ -94,6 +94,8 @@ def get_all_forms():
 def get_all_approved_forms():
     result = list(mongo.forms.find({'status':'approved'}))
     result = json.dumps(result, default=json_util.default)
+    if result is None:
+        return jsonify([])
     return result
 
 

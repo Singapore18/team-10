@@ -111,7 +111,7 @@ class ResumeHome extends Component {
                 </Grid>
                 <Divider />
                 <List>
-                    {this.renderItems()}
+                    {this.state.results !== 'undefined' ? this.renderItems() : null}
                 </List>
             </Container>
         )
