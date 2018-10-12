@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600|Roboto:100,300,400|Encode+Sans+Expanded:300");
+.header-wrapper {
+  width: 100%; }
+  .header-wrapper .header-container {
+    position: fixed;
+    background-color: #F7F7F7;
+    z-index: 99;
+    top: 0;
+    left: 250px;
+    right: 0px;
+    display: flex;
+    flex-direction: column; }
+    .header-wrapper .header-container .header-offline-bar {
+      background-color: #F5BDBC;
+      color: #C72921;
+      margin-bottom: 10px;
+      padding: 5px;
+      text-align: center;
+      font-size: 15px; }
+      .header-wrapper .header-container .header-offline-bar.online {
+        display: none; }
+    .header-wrapper .header-container .header-container-main {
+      display: flex;
+      padding-bottom: 10px;
+      padding-top: 10px; }
+      .header-wrapper .header-container .header-container-main .header-search {
+        display: flex;
+        flex: 3;
+        justify-content: center;
+        align-items: center; }
+      .header-wrapper .header-container .header-container-main .header-avatar {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        text-align: center; }
+        .header-wrapper .header-container .header-container-main .header-avatar .avatar-image {
+          width: 50px;
+          margin-left: 15px; }
+          .header-wrapper .header-container .header-container-main .header-avatar .avatar-image:hover {
+            cursor: pointer; }
+
+.avatar {
+  width: 50px;
+  margin-left: 15px; }
+  .avatar:hover {
+    cursor: pointer; }

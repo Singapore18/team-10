@@ -1,0 +1,9 @@
+.default-page-wrapper {
+  padding-top: 10%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  .default-page-wrapper .default-page-img {
+    margin-left: auto;
+    margin-right: auto; }

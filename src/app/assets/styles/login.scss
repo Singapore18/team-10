@@ -1,0 +1,46 @@
+@import 'variables';
+
+.login-container{
+    background-color: #e2e1e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .login-top-half-color{
+        background-color: $hepmil-primary;
+        position: absolute;
+        top: 0px;
+        height: 40vh;
+        width: 100%;
+    }
+    .login-card {
+        z-index: 5;
+        background-color: $login-background;
+        display: flex;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        width: 30%;
+        height: 70vh;
+        padding: 50px;
+
+        .input-login {
+            display: flex;
+            flex-direction: column;
+            min-width: 250px;
+            padding-bottom: 20px;
+        }
+        .checkbox {
+            color: white;
+        }
+    }
+}
+
+.button-log-in{
+    color: white;
+    background-color: $hepmil-accent-1;
+    width: 30%;
+}

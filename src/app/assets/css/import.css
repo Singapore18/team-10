@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600|Roboto:100,300,400|Encode+Sans+Expanded:300");
+.import-dropzone {
+  width: 50%;
+  height: 500px;
+  border-style: dashed;
+  border-width: 2px;
+  padding: 10px; }
