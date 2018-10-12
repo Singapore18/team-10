@@ -48,7 +48,7 @@ export default class FormPage extends Component {
                 {this.state.all_forms.map((value,index)=>{
                     return(
                         <div className="card">
-                            <NavLink to={`/${value._id.$oid}`}>
+                            <NavLink to={`/coach/${value._id.$oid}`}>
                                 <h1>
                                     {value.NRIC}
                                 </h1>

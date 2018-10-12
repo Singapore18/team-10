@@ -42,6 +42,7 @@ export default class CoachPage extends Component {
 
 
     componentDidMount = async () => {
+        this/this.getAnswersByOID();
     }
 
     getAnswersByOID = async () => {
