@@ -13,16 +13,17 @@ import {
 
 class ResumePage extends Component {
     renderWorkExp(workExp) {
-        const expLength = workExp.length;
-        return workExp.map((exp, idx) => {
-            return (
-                <div key={exp.job_title}>
-                    <text>{`I have ${exp.job_title} experience from working at ${exp.company} during ${exp.periodStart} to ${exp.periodEnd}.`}</text>
-                    { idx < expLength -1 ? <br /> : null}
-                    { idx < expLength -1 ? <br /> : null}
-                </div>
-            )
-        });
+        if (workExp !== null || workExp !== 'undefined') {
+            return workExp.map((exp, idx) => {
+                return (
+                    <div key={exp.job_title}>
+                        <text>{`I have ${exp.job_title} experience from working at ${exp.company} during ${exp.periodStart} to ${exp.periodEnd}.`}</text>
+                        { idx < workExp.length -1 ? <br /> : null}
+                        { idx < workExp.length -1 ? <br /> : null}
+                    </div>
+                )
+            });
+        }
     }
 
     renderJobInterest(interests) {
@@ -40,6 +41,7 @@ class ResumePage extends Component {
 
     render() {
         const { userInfo } = this.props;
+        console.log(userInfo);
         return (
             <Container>
                 <div id="divToPrint" style={{ height: '100%', paddingTop: 30, width: '100%'}}>
@@ -68,7 +70,7 @@ class ResumePage extends Component {
                                           <Image
                                               src='https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_1280.png'
                                               size='medium'
-                                              href='www.google.com'
+                                              // href='www.google.com'
                                               target='_blank'
                                           />
                                       </div>

@@ -7,7 +7,7 @@ import CoachPage from './app/coach/CoachPage';
 import CoachHomePage from './app/coach/CoachHomePage';
 import ResumeContainer from './app/resume/ResumeContainer';
 import ResumeHome from './app/resume/ResumeHome';
-// import HirePage from './app/hire/HirePage';
+import HirePage from './app/hire/HirePage';
 
 // Import css
 import './app/assets/css/theme.css';
@@ -29,6 +29,7 @@ class App extends Component {
               <Route exact path='/home' component={ResumeHome} />
               <Route exact path='/coachHome' component={CoachHomePage}/>
               <Route exact path='/coach/:oid' component={CoachPage}/>
+              <Route exact path='/hire' component={HirePage} />
           </Switch>
         </Route>
       </Router>

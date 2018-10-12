@@ -1,0 +1,18 @@
+.hire-wrapper {
+  background-color: #0F7DAC;
+  height: 100vh;
+  padding-top: 10%;
+  color: white;
+  text-align: left;
+  align-items: left;
+  justify-content: left; }
+  .hire-wrapper .hire-questions {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2%;
+    width: 70%; }
+  .hire-wrapper .footer {
+    color: grey;
+    padding-top: 5%; }

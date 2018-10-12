@@ -19,7 +19,7 @@ class ResumeHome extends Component {
         searchQuery: '',
         results: [{
             full_name: 'Tom Hanks',
-            quote: 'lorem ipsum',
+            quote: 'See my capabilities, not my disability!',
             interested_industries: ['F&B', 'Hotel'],
             work_experience: [
                 { job_title: 'Dish Washer', company: 'MacDonalds', periodStart: 'Jan 2018', periodEnd: 'May 2018'},
@@ -28,13 +28,23 @@ class ResumeHome extends Component {
 
         }, {
             full_name: 'Tom Hanks',
-            quote: 'lorem ipsum',
+            quote: 'See my capabilities, not my disability!',
             interested_industries: ['F&B', 'Hotel'],
             work_experience: [
                 { job_title: 'Dish Washer', company: 'MacDonalds', periodStart: 'Jan 2018', periodEnd: 'May 2018'},
                 {job_title: 'Sales Assistant', company: 'Uniqlo', periodStart: 'Apr 2017', periodEnd: 'Dec 2017'}
             ],
         }]
+    }
+
+    componentDidMount() {
+        // fetch(`http://127.0.0.1:5000/home`)
+        // .then((res) => {
+        //     this.setState({
+        //         results: res
+        //     })
+        // })
+        // .catch((err) => console.log(err));
     }
 
     onSearchCHange(text) {
