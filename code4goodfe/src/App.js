@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 // Import Screens
 import FormPage from './app/form/FormPage';
 import CoachPage from './app/coach/CoachPage';
-import ResumePage from './app/resume/ResumePage';
+import ResumeContainer from './app/resume/ResumeContainer';
 
 // Import css
 import './app/assets/css/theme.css';
@@ -22,7 +22,7 @@ class App extends Component {
         <Route>
           <Switch>
               <Route exact path='/' component={FormPage}/>
-              <Route exact path='/resume/:identifier' component={ResumePage}/>
+              <Route exact path='/resume/:identifier' component={ResumeContainer}/>
               <Route exact path='/coach/:identifier' component={CoachPage}/>
           </Switch>
         </Route>
