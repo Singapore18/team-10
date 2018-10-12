@@ -109,7 +109,7 @@ export default class FormPage extends Component {
         .then((response) => response.json())
         .then((responseJson)=>{
             alert(responseJson.message);
-            return(<Redirect to="/"/>)
+            window.location.href='/coachHome'
         })
         .catch((error) => {
             

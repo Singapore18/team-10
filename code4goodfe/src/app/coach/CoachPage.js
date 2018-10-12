@@ -128,6 +128,7 @@ export default class CoachPage extends Component {
         .then((response) => response.json())
         .then((responseJson)=>{
             alert('publish success');
+            window.location.href='/coachHome'
         })
         .catch((error) => {
         })
