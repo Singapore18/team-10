@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Import Screens
 import FormPage from './app/form/FormPage';
 import CoachPage from './app/coach/CoachPage';
+import CoachHomePage from './app/coach/CoachHomePage';
 import ResumeContainer from './app/resume/ResumeContainer';
 import ResumeHome from './app/resume/ResumeHome';
 
@@ -25,6 +26,7 @@ class App extends Component {
               <Route exact path='/' component={FormPage}/>
               <Route exact path='/resume/:identifier' component={ResumeContainer}/>
               <Route exact path='/home' component={ResumeHome} />
+              <Route exact path='/coachHome' component={CoachHomePage}/>
               <Route exact path='/coach/:identifier' component={CoachPage}/>
           </Switch>
         </Route>
