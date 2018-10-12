@@ -28,6 +28,7 @@ def store_new_form():
         'request_duration': data['request_duration'],
         'request_dow': data['request_dow'],
         'quote': data['quote'],
+
         'status': 'pending', # pending, approved, employed
         'job_offers': [],
         'matched_employer': ''
@@ -64,11 +65,10 @@ def get_all_forms():
 
 @app.route('/home/<string:id>', methods=['GET'])
 def get_one_approved_form(id):
-    
+
     form = mongo.articles.find_one({'_id': ObjectId(id), 'status':'approved'})
     if form is not None:
         form = json.dumps(form, default=json_util.default)
         return jsonify(form)
     else:
         return jsonify('this id cannot find')
-
