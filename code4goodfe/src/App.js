@@ -29,7 +29,7 @@ class App extends Component {
               <Route exact path='/home' component={ResumeHome} />
               <Route exact path='/coachHome' component={CoachHomePage}/>
               <Route exact path='/coach/:oid' component={CoachPage}/>
-              <Route exact path='/hire' component={HirePage} />
+              <Route exact path='/hire/:oid' component={HirePage} />
           </Switch>
         </Route>
       </Router>

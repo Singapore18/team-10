@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Input, Popup, Button } from 'semantic-ui-react'
-import Calendar from 'react-calendar';
+import {
+    OFFER,
+    API_SERVER_URL
+} from '../../api';
 
 import '../assets/css/theme.css';
 import '../assets/css/hire.css';
@@ -36,23 +39,36 @@ export default class CoachPage extends Component {
         }
     }
 
-    onSubmit() {
+    offer = async () => {
+        const oid = this.props.match.params.oid;
+        let body = {
+            employee_id: this.state.oid,
+            company_name: this.state.company_name,
+            work_location: this.state.work_location,
+            job_title: this.state.job_title,
+            job_description: this.state.job_description,
+            contact_person: this.state.contact_person,
+            contact_number: this.state.contact_number,
+            email_address: this.state.email_address,
+            remarks: this.state.remarks,
+        }
         // api call
-        fetch('/offer', {
-            method: 'post',
-            body: {
-                company_name: this.state.company_name,
-                work_location: this.state.work_location,
-                job_title: this.state.job_title,
-                job_description: this.state.job_description,
-                contact_person:this.contact_person,
-                contact_number: this.state.contact_number,
-                email_address: this.state.email_address,
-                remarks: this.state.remarks
-            }
+        await fetch(API_SERVER_URL + OFFER,{
+            method: 'POST', 
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify(body)
+          })
+        .then((response) => response.json())
+        .then((responseJson)=>{
+            alert("offer success");
         })
-        .then((res) => this.props.history.push('/home'))
-        .catch((error) => console.log(error))
+        .catch((error) => {
+            
+        })
     }
     render() {
         return(
@@ -80,8 +96,8 @@ export default class CoachPage extends Component {
                         <Input fluid placeholder='' onChange={(event)=>{this.setState({remarks:event.target.value},()=>{this.submit();})}}/><br/>
                     </div>
 
-                    <button class='ui inverted button' onClick={()=>{this.onSubmit()}}>
-                        <h4>Submit</h4>
+                    <button class='ui inverted button' onClick={()=>{this.offer()}}>
+                        <h4>Offer</h4>
                     </button>
                     <button class='ui inverted button' onClick={()=>{this.clear()}}>
                         <h4>Cancel</h4>
