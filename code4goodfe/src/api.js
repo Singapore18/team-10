@@ -10,3 +10,4 @@ export const API_SERVER_URL = 'http://127.0.0.1:5000'; // URL deployed staging
 // export const API_SERVER_URL = '' // URL deployed production
 
 export const FORM = '/form';
+export const ALL_FORMS = '/all';

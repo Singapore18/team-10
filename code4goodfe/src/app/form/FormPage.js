@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Popup, Button } from 'semantic-ui-react'
 import Calendar from 'react-calendar';
+import { Redirect } from 'react-router-dom';
 
 import '../assets/css/theme.css';
 import '../assets/css/form.css';
@@ -18,6 +19,7 @@ export default class FormPage extends Component {
             currentQuestion: 0,
             questions: [
                 {question:'What is your NRIC? :)', key: 'NRIC'},
+                {question:'What is your coach NRIC? :)', key: 'coach'},
                 {question:'What is your full name?', key: 'full_name'},
                 {question:'What do you like to do in your freetime :D', key: 'personal_interests'},
                 {question:'What are your strengths?', key: 'work_strengths'},
@@ -34,6 +36,7 @@ export default class FormPage extends Component {
 
             // For sending back json
             NRIC: '',
+            coach: '',
             full_name: '',
             personal_interests: '',
             work_strengths: '',
@@ -78,6 +81,7 @@ export default class FormPage extends Component {
     submit = async () => {
         let body = {
             NRIC: this.state.NRIC,
+            coach: this.state.coach,
             full_name: this.state.full_name,
             personal_interests: this.state.personal_interests,
             work_strengths: this.state.work_strengths,
@@ -105,6 +109,7 @@ export default class FormPage extends Component {
         .then((response) => response.json())
         .then((responseJson)=>{
             alert(responseJson.message);
+            return(<Redirect to="/"/>)
         })
         .catch((error) => {
             
@@ -198,7 +203,7 @@ export default class FormPage extends Component {
                                     index===5?(
                                         <div className='card card-style' key={value.key}>
                                             <h2>{value.question}</h2>
-                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value},()=>{this.submit();})}}/>
+                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value})}}/>
                                             <br/>
                                                 <div className="button-container">
                                                     <button class='button-call-to-actions' onClick={()=>{this.back(index);}}>
@@ -222,7 +227,7 @@ export default class FormPage extends Component {
                                     ):(
                                         <div className='card card-style' key={value.key}>
                                             <h2>{value.question}</h2>
-                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value},()=>{this.submit();})}}/>
+                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value})}}/>
                                             <br/>
                                                 <div className="button-container">
                                                     <button class='button-call-to-actions' onClick={()=>{this.back(index);}}>
