@@ -203,7 +203,7 @@ export default class FormPage extends Component {
                                     index===5?(
                                         <div className='card card-style' key={value.key}>
                                             <h2>{value.question}</h2>
-                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value},()=>{this.submit();})}}/>
+                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value})}}/>
                                             <br/>
                                                 <div className="button-container">
                                                     <button class='button-call-to-actions' onClick={()=>{this.back(index);}}>
@@ -227,7 +227,7 @@ export default class FormPage extends Component {
                                     ):(
                                         <div className='card card-style' key={value.key}>
                                             <h2>{value.question}</h2>
-                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value},()=>{this.submit();})}}/>
+                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value})}}/>
                                             <br/>
                                                 <div className="button-container">
                                                     <button class='button-call-to-actions' onClick={()=>{this.back(index);}}>
