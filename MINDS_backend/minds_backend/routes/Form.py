@@ -8,11 +8,12 @@ from bson import json_util
 @app.route('/form', methods=['POST'])
 def store_new_form():
     data = request.get_json()
-    
+
     mongo.forms.insert_one({
         'NRIC': data['NRIC'],
         'first_name': data['first_name'],
         'full_name': data['full_name'],
+        'coach': data['coach'],
         'date': data['date'],
         'personal_interests': data['personal_interests'],
         'work_strengths': data['work_strengths'],
@@ -32,5 +33,3 @@ def store_new_form():
     result = list(mongo.forms.find())
     result = json.dumps(result, default=json_util.default)
     return jsonify(result)
-    
-
