@@ -103,7 +103,6 @@ export default class FormPage extends Component {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify(body)
           })
@@ -204,15 +203,22 @@ export default class FormPage extends Component {
                                     index===5?(
                                         <div className='card card-style' key={value.key}>
                                             <h2>{value.question}</h2>
-                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value})}}/>
+                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value},()=>{this.submit();})}}/>
                                             <br/>
                                                 <div className="button-container">
                                                     <button class='button-call-to-actions' onClick={()=>{this.back(index);}}>
                                                         <h4>Previous</h4>
                                                     </button>
-                                                    <button class='button-call-to-actions' onClick={()=>{this.next(index);}}>
-                                                        <h4>Next</h4>
-                                                    </button>
+                                                    <span style={{'color':'transparent'}}>|</span>
+                                                    {index===this.state.questions.length-1?(
+                                                        <button class='button-call-to-actions' onClick={this.submit()}>
+                                                            <h4>Submit</h4>
+                                                        </button>
+                                                    ):(
+                                                        <button class='button-call-to-actions' onClick={()=>{this.next(index);}}>
+                                                            <h4>Next</h4>
+                                                        </button>
+                                                    )}
                                                 </div>
                                             
                                             <br/>
@@ -221,7 +227,7 @@ export default class FormPage extends Component {
                                     ):(
                                         <div className='card card-style' key={value.key}>
                                             <h2>{value.question}</h2>
-                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value})}}/>
+                                            <Input fluid placeholder='Type your answer here...' onChange={(event)=>{this.setState({[value.key]:event.target.value},()=>{this.submit();})}}/>
                                             <br/>
                                                 <div className="button-container">
                                                     <button class='button-call-to-actions' onClick={()=>{this.back(index);}}>
@@ -229,7 +235,7 @@ export default class FormPage extends Component {
                                                     </button>
                                                     <span style={{'color':'transparent'}}>|</span>
                                                     {index===this.state.questions.length-1?(
-                                                        <button class='button-call-to-actions' onClick={()=>this.submit()}>
+                                                        <button class='button-call-to-actions' onClick={this.submit()}>
                                                             <h4>Submit</h4>
                                                         </button>
                                                     ):(
