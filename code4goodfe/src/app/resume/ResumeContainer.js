@@ -38,9 +38,9 @@ export default class ResumeContainer extends Component {
                 quote: 'See my capabilities, not my disability!',
                 personal_interests: 'I love shopping and listening to music. I also love playing badminton and spending time with my family!',
                 work_strengths: 'I am helpful, initiative and always punctual for work!',
-                work_experience: [
-                    { job_title: 'Dish Washer', company: 'MacDonalds', periodStart: 'Jan 2018', periodEnd: 'May 2018'},
-                    {job_title: 'Sales Assistant', company: 'Uniqlo', periodStart: 'Apr 2017', periodEnd: 'Dec 2017'}
+                skills: [
+                    { job_title: 'Dish Washer', company: 'MacDonalds', start_date: 'Jan 2018', end_date: 'May 2018'},
+                    {job_title: 'Sales Assistant', company: 'Uniqlo', periodStart: 'Apr 2017', end_date: 'Dec 2017'}
                 ],
                 interested_industries: ['F&B', 'Hotel'],
                 support: 'Please give me simple and clear instructions, encouragement and guidance. I may be slow in the beginning but with time, let me show you my capabilities!',
