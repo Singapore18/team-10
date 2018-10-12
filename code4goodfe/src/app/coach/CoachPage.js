@@ -7,7 +7,8 @@ import '../assets/css/coach.css';
 
 import {
     API_SERVER_URL,
-    EDIT_FORM
+    EDIT_FORM,
+    PUBLISH_FORM
 } from '../../api';
 
 export default class CoachPage extends Component {
@@ -100,13 +101,32 @@ export default class CoachPage extends Component {
         await fetch(API_SERVER_URL + EDIT_FORM + oid,{
             method: 'POST', 
             headers: {
-                'Access-Control-Allow-Origin': '*'
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(body)
+          })
+        .then((response) => response.json())
+        .then((responseJson)=>{
+            alert(responseJson.message);
+            return(<Redirect to="/"/>)
+        })
+        .catch((error) => {
+            
+        })
+    }
+
+    publish = () => {
+        const oid = this.props.match.params.oid;
+        await fetch(API_SERVER_URL + PUBLISH_FORM + oid,{
+            method: 'GET', 
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            },
         })
         .then((response) => response.json())
         .then((responseJson)=>{
-            alert('save success');
+            alert('publish success');
         })
         .catch((error) => {
         })
@@ -237,7 +257,7 @@ export default class CoachPage extends Component {
                     <button class='ui inverted button' onClick={()=>{this.save()}}>
                         <h4>Save</h4>
                     </button>
-                    <button class='ui inverted button'>
+                    <button class='ui inverted button' onClick={()=>{this.publish()}}>
                         <h4>Publish </h4>
                     </button>
                 </div>
