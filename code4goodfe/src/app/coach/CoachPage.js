@@ -109,15 +109,14 @@ export default class CoachPage extends Component {
           })
         .then((response) => response.json())
         .then((responseJson)=>{
-            alert(responseJson.message);
-            return(<Redirect to="/"/>)
+            alert("save success");
         })
         .catch((error) => {
             
         })
     }
 
-    publish = () => {
+    publish = async () => {
         const oid = this.props.match.params.oid;
         await fetch(API_SERVER_URL + PUBLISH_FORM + oid,{
             method: 'GET', 
