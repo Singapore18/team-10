@@ -14,6 +14,8 @@
     .form-wrapper .form-questions .card-style {
       padding-top: 2%;
       width: 50%; }
+  .form-wrapper .experience {
+    padding: 20px; }
   .form-wrapper .footer {
     color: grey;
     padding-top: 5%; }
