@@ -12,3 +12,4 @@ export const API_SERVER_URL = 'http://127.0.0.1:5000'; // URL deployed staging
 export const FORM = '/form';
 export const ALL_FORMS = '/all';
 export const EDIT_FORM = '/coach/edit_form/'
+export const PUBLISH_FORM = '/coach/'
