@@ -21,7 +21,7 @@ class App extends Component {
       <Router>
         <Route>
           <Switch>
-              <Route exact path='/' component={FormPage}/>
+              <Route exact path='/form' component={FormPage}/>
               <Route exact path='/resume/:identifier' component={ResumePage}/>
               <Route exact path='/coach/:identifier' component={CoachPage}/>
           </Switch>
