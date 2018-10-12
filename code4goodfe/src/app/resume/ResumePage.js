@@ -56,7 +56,7 @@ class ResumePage extends Component {
                                      <Header as='h3'>My Personal Interests</Header>
                                      <text>{`${userInfo.personal_interests}`}</text>
                                      <Header as='h3'>My Work Strengths</Header>
-                                     <text>{`${userInfo.work_strengths}`}</text>
+                                     <text>{`${userInfo.skills.join(',')}`}</text>
                                      <Header as='h3'>My Work Experience</Header>
                                      {this.renderWorkExp(userInfo.work_experience)}
                                      <Header as='h3'>My Job Interest</Header>
@@ -69,7 +69,8 @@ class ResumePage extends Component {
                                   <div className='card' style={{ height: 550, width: '100%'}}>
                                       <div style={{ alignItems: 'center', width: '100%'}}>
                                           <Image
-                                              src='https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_1280.png'
+                                              src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539341265033&di=c4783ca3c71d8e7195d3335f95a60b5a&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Faa64034f78f0f736433a793c0155b319eac413c2.jpg'
+                                            //   src='https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_1280.png'
                                               size='medium'
                                               // href='www.google.com'
                                               target='_blank'
