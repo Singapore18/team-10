@@ -27,7 +27,7 @@ class App extends Component {
               <Route exact path='/resume/:identifier' component={ResumeContainer}/>
               <Route exact path='/home' component={ResumeHome} />
               <Route exact path='/coachHome' component={CoachHomePage}/>
-              <Route exact path='/coach/:identifier' component={CoachPage}/>
+              <Route exact path='/coach/:oid' component={CoachPage}/>
           </Switch>
         </Route>
       </Router>

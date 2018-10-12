@@ -15,7 +15,8 @@ export default class FormPage extends Component {
     constructor(props) {
         super(props);
         this.state={
-            all_forms: []
+            all_forms: [],
+            
         }
     }
 
