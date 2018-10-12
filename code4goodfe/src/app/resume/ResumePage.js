@@ -15,9 +15,10 @@ class ResumePage extends Component {
     renderWorkExp(workExp) {
         if (workExp !== null || workExp !== 'undefined') {
             return workExp.map((exp, idx) => {
+                console.log(exp)
                 return (
-                    <div key={exp.job_title}>
-                        <text>{`I have ${exp.job_title} experience from working at ${exp.company} during ${exp.periodStart} to ${exp.periodEnd}.`}</text>
+                    <div key={exp.job_role}>
+                        <text>{`I have ${exp.job_role} experience from working at ${exp.company} during ${exp.start_date} to ${exp.end_date}.`}</text>
                         { idx < workExp.length -1 ? <br /> : null}
                         { idx < workExp.length -1 ? <br /> : null}
                     </div>

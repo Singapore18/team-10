@@ -5,6 +5,7 @@ import json
 from bson import json_util
 from bson.objectid import ObjectId
 from datetime import datetime
+from minds_backend.routes import InformEmployer
 
 
 @app.route('/form', methods=['POST'])
@@ -76,6 +77,7 @@ def update_form(id):
 def approve_form(id):
     try:
         mongo.forms.update({'_id':ObjectId(id)}, {"$set": {'status': 'approved'}}, upsert=False)
+        InformEmployer.inform(id)
         return jsonify('success')
     except:
         return jsonify('failed')

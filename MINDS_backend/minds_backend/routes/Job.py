@@ -17,7 +17,7 @@ def store_new_job():
             'job_description': 'Unpack clothes from boxes, fold, sort & hang clothes. Prefer physically fit males.',
             'contact_person': 'Masaki Ta',
             'contact_number': '86122242',
-            'email_address': 'goto@uniqlo.com',
+            'email_address': 'xujinzheng0610@gmail.com',
             'industry': 'F&B'
             },
             {
@@ -28,7 +28,7 @@ def store_new_job():
             'job_description': 'Clean floor.',
             'contact_person': 'Ann Tu',
             'contact_number': '86789134',
-            'email_address': 'goto@subway.com',
+            'email_address': 'xujinzheng0610@gmail.com',
             'industry': 'Cleaning'
             },
             {
@@ -39,7 +39,7 @@ def store_new_job():
             'job_description': 'Clean room.',
             'contact_person': 'Clare Ma',
             'contact_number': '89612344',
-            'email_address': 'goto@uniqlo.com',
+            'email_address': 'xujinzheng0610@gmail.com',
             'industry': 'Hotel'
             }]
 

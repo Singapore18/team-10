@@ -17,34 +17,38 @@ import {
 class ResumeHome extends Component {
     state = {
         searchQuery: '',
-        results: [{
-            full_name: 'Tom Hanks',
-            quote: 'See my capabilities, not my disability!',
-            interested_industries: ['F&B', 'Hotel'],
-            work_experience: [
-                { job_title: 'Dish Washer', company: 'MacDonalds', periodStart: 'Jan 2018', periodEnd: 'May 2018'},
-                {job_title: 'Sales Assistant', company: 'Uniqlo', periodStart: 'Apr 2017', periodEnd: 'Dec 2017'}
-            ],
+        // results: [{
+        //     full_name: 'Tom Hanks',
+        //     quote: 'See my capabilities, not my disability!',
+        //     interested_industries: ['F&B', 'Hotel'],
+        //     work_experience: [
+        //         { job_title: 'Dish Washer', company: 'MacDonalds', periodStart: 'Jan 2018', periodEnd: 'May 2018'},
+        //         {job_title: 'Sales Assistant', company: 'Uniqlo', periodStart: 'Apr 2017', periodEnd: 'Dec 2017'}
+        //     ],
 
-        }, {
-            full_name: 'Tom Hanks',
-            quote: 'See my capabilities, not my disability!',
-            interested_industries: ['F&B', 'Hotel'],
-            work_experience: [
-                { job_title: 'Dish Washer', company: 'MacDonalds', periodStart: 'Jan 2018', periodEnd: 'May 2018'},
-                {job_title: 'Sales Assistant', company: 'Uniqlo', periodStart: 'Apr 2017', periodEnd: 'Dec 2017'}
-            ],
-        }]
+        // }, {
+        //     full_name: 'Tom Hanks',
+        //     quote: 'See my capabilities, not my disability!',
+        //     interested_industries: ['F&B', 'Hotel'],
+        //     work_experience: [
+        //         { job_title: 'Dish Washer', company: 'MacDonalds', periodStart: 'Jan 2018', periodEnd: 'May 2018'},
+        //         {job_title: 'Sales Assistant', company: 'Uniqlo', periodStart: 'Apr 2017', periodEnd: 'Dec 2017'}
+        //     ],
+        // }]
+        results: []
     }
 
     componentDidMount() {
-        // fetch(`http://127.0.0.1:5000/home`)
-        // .then((res) => {
-        //     this.setState({
-        //         results: res
-        //     })
-        // })
-        // .catch((err) => console.log(err));
+        fetch(`http://127.0.0.1:5000/home`)
+        .then(res => res.json())
+        .catch(err => console.log(err))
+        .then((res) => {
+            console.log(res)
+            this.setState({
+                results: res
+            })
+        })
+        .catch((err) => console.log(err));
     }
 
     onSearchCHange(text) {
@@ -56,14 +60,14 @@ class ResumeHome extends Component {
     }
 
     onUserClick(id) {
-        this.props.history.push('/resume/123');
+        this.props.history.push(`/resume/${id}`);
     }
 
     renderItems() {
         return  this.state.results.map((result) => {
             const user_exp = result.work_experience.map((work) => work.job_title);
             return (
-                <List.Item onClick={this.onUserClick.bind(this)}>
+                <List.Item onClick={() => this.onUserClick(result._id['$oid'])}>
                     <Segment>
                         <Grid>
                             <Grid.Row>
