@@ -7,6 +7,7 @@ import CoachPage from './app/coach/CoachPage';
 import CoachHomePage from './app/coach/CoachHomePage';
 import ResumeContainer from './app/resume/ResumeContainer';
 import ResumeHome from './app/resume/ResumeHome';
+// import HirePage from './app/hire/HirePage';
 
 // Import css
 import './app/assets/css/theme.css';

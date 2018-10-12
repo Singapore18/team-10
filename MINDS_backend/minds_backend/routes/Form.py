@@ -92,25 +92,23 @@ def get_all_forms():
 def get_all_approved_forms():
     result = list(mongo.forms.find({'status':'approved'}))
     result = json.dumps(result, default=json_util.default)
-    return jsonify(result)
+    return result
 
 
 """@app.route('/home/food', methods = ['POST'])
 def get_required_approved_forms():
     criteria = request.get_json()
     skill_keyword = criteria['skills']
-    
-    
+
+
     result = list(mongo.forms.find({'status':'approved'}))"""
 
 
 @app.route('/home/<string:id>', methods=['GET'])
 def get_one_approved_form(id):
-    
-    form = mongo.articles.find_one({'_id': ObjectId(id), 'status':'approved'})
+    form = mongo.forms.find_one({'_id': ObjectId(id), 'status':'approved'})
     if form is not None:
         form = json.dumps(form, default=json_util.default)
-        return jsonify(form)
+        return form
     else:
         return jsonify('this id cannot find')
-

@@ -119,3 +119,5 @@ button {
     margin-top: 10px;
     border-top: 1px solid #bdbdbd;
     padding-top: 10px; }
+
+.html2canvas-container { width: 3000px !important; height: 3000px !important; }
