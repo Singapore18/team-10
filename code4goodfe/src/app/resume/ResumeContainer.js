@@ -17,11 +17,19 @@ export default class ResumeContainer extends Component {
             // fetch data here
             const id = this.props.location.pathname.replace('/resume/', '');
             const ROOT = 'http://127.0.0.1:5000/';
+            console.log(`${ROOT}home/${id}`);
             fetch(`${ROOT}home/${id}`)
             .then((res) => res.json())
             .catch((err) => console.log(err))
             .then((res) => {
-                console.log(res);
+                this.setState({
+                    id,
+                    fetched: true,
+                    data: {
+                        quote: 'See my capabilities, not my disability!',
+                        ...res
+                    }
+                })
             })
             .catch((error) => {
                 console.log(error);
@@ -46,13 +54,13 @@ export default class ResumeContainer extends Component {
                 request_dow: 'weekends'
             }
             // update state
-            setTimeout(() => {
-                this.setState({
-                    id,
-                    data,
-                    fetched: true
-                });
-            }, 100);
+            // setTimeout(() => {
+            //     this.setState({
+            //         id,
+            //         data,
+            //         fetched: true
+            //     });
+            // }, 100);
         }
         // setTimeout(() => {
         //     this.printDocument()
