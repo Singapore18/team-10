@@ -1,0 +1,19 @@
+.form-wrapper {
+  background-color: #0F7DAC;
+  height: 100vh;
+  padding-top: 10%;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center; }
+  .form-wrapper .form-questions {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .form-wrapper .form-questions .card-style {
+      padding-top: 2%;
+      width: 50%; }
+  .form-wrapper .footer {
+    color: grey;
+    padding-top: 5%; }

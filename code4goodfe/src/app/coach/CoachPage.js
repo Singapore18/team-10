@@ -11,7 +11,7 @@ export default class CoachPage extends Component {
     render() {
         return(
             <div>
-                <h1>Hello World</h1>
+                <h1>Let us know more about you!</h1>
             </div>
         )
     }

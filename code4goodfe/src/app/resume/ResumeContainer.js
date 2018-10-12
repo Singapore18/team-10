@@ -40,30 +40,31 @@ export default class ResumeContainer extends Component {
                 });
             }, 100);
         }
-        setTimeout(() => {
-            this.printDocument()
-        }, 2000)
+        // setTimeout(() => {
+        //     this.printDocument()
+        // }, 2000)
     }
 
-    printDocument() {
-        const input = document.getElementById('divToPrint');
+    // printDocument() {
+    //     const input = document.getElementById('divToPrint');
+    //
+    //     var useWidth = input.style.width;
+    //     var useHeight = input.style.height;
+    //
+    //     html2canvas(input, {
+    //         height: useHeight,
+    //         width: useWidth
+    //     })
+    //     .then((canvas) => {
+    //         document.body.appendChild(canvas);
+    //         const imgData = canvas.toDataURL('image/jpeg')
+    //
+    //         const pdf = new jsPDF();
+    //         pdf.addImage(imgData, 'JPEG', 0, 0);
+    //         pdf.save("download.pdf");
+    //     });
+    // }
 
-        var useWidth = input.style.width;
-        var useHeight = input.style.height;
-
-        html2canvas(input, {
-            height: useHeight,
-            width: useWidth
-        })
-        .then((canvas) => {
-            document.body.appendChild(canvas);
-            const imgData = canvas.toDataURL('image/jpeg')
-
-            const pdf = new jsPDF();
-            pdf.addImage(imgData, 'JPEG', 0, 0);
-            pdf.save("download.pdf");
-        });
-    }
     render() {
         if (this.state.fetched) {
             return (
