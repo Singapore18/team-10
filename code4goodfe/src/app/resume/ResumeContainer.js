@@ -8,7 +8,6 @@ const jsPDF = require('jspdf');
 
 export default class ResumeContainer extends Component {
         state = {
-            id: '',
             fetched: false,
             data: {}
         }
@@ -17,8 +16,10 @@ export default class ResumeContainer extends Component {
         if (!this.state.fetched) {
             // fetch data here
             const id = this.props.location.pathname.replace('/resume/', '');
-            const ROOT = 'localhost:5000/';
+            const ROOT = 'http://127.0.0.1:5000/';
             fetch(`${ROOT}home/${id}`)
+            .then((res) => res.json())
+            .catch((err) => console.log(err))
             .then((res) => {
                 console.log(res);
             })
