@@ -6,7 +6,7 @@ from bson import json_util
 from bson.objectid import ObjectId
 
 
-@app.route('/offer', methods=['POST'])
+@app.route('/job', methods=['POST'])
 def store_new_offer():
     data = request.get_json()
 
@@ -34,36 +34,3 @@ def store_new_offer():
     mongo.forms.update({'_id':ObjectId(employee['_id'])}, {"$set": {'job_offers': job_offers_current}}, upsert=False)
 
     return "Saved"
-
-
-@app.route('/get_offer', methods=['POST'])
-def get_offers():
-
-    data = request.get_json()
-
-    employee = mongo.forms.find_one({'_id': ObjectId(data['employee_id'])})
-    offers = []
-    job_offers = employee['job_offers']
-    for offer_id in job_offers:
-        offer_dict = mongo.offers.find_one({'_id': ObjectId(offer_id)})
-        offers.append(offer_dict)
-
-    offers = json.dumps(offers, default=json_util.default)
-
-    return jsonify(offers)
-
-
-
-# {
-# "employee_id": "5bc02fb8894fef749706be94",
-# "date": "data",
-# "company_name": "data",
-# "work_location": "data",
-# "job_title": "data",
-# "job_description": "data",
-# "contact_person": "data",
-# "contact_number": "data",
-# "email_address": "data",
-# "remarks": "data"
-# }
-#
